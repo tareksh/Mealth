@@ -19,34 +19,14 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request){
+        
         if(!Auth::attempt(['email' => $request['email'], 'password' =>  $request['password']]))
             return response()->json([
                 'message' => 'Unauthorized'
             ], 401);
 
         $user = Auth::user();
-        $user = Auth::user();
         $token = $user->createToken('LPAC')-> accessToken;
-
-     /*
-        $data = request()->only('email','password');
-        $client = Client::where('password_client', 1)->first();
-        $request->request->add([
-            'grant_type'    => 'password',
-            'client_id'     => $client->id,
-            'client_secret' => $client->secret,
-            'username'      => $data['email'],
-            'password'      => $data['password'],
-            'scope'         => null,
-        ]);
-
-
-        $proxy = Request::create(
-            'oauth/token',
-            'POST'
-        );
-     */
-
         return response()->json(['$token' => $token], $this-> successStatus);
     }
     /*
