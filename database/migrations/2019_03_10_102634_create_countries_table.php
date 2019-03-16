@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecipeBoxTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateRecipeBoxTable extends Migration
      */
     public function up()
     {
-        Schema::create('recipe_box', function (Blueprint $table) {
+        Schema::create('countries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('recipe_id');
-            $table->integer('user_id');
-            $table->timestamps();
+            $table->string('country_name');
+            $table->string('currency_name');
+            $table->string('currency_symbol');
+            $table->integer('exchange_rate');
         });
     }
 
@@ -28,6 +29,6 @@ class CreateRecipeBoxTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Recipe_Box');
+        Schema::dropIfExists('countries');
     }
 }

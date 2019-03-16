@@ -75,9 +75,40 @@ class UserController extends Controller
         print_r($request->user());
     }
 
+
+
+    public function UserFilter(Request $request)
+    {
+        $where = [];
+
+        if(isset($request['role']) )
+        {
+                $newCompete =   ['role', '=', $request['role']];
+                array_push($where, $newCompete);
+        }
+
+        if(isset($request['name']))
+        {
+
+            $newCompete =  ['name', 'like','%'.$request['name'].'%'];
+            array_push($where, $newCompete);
+        }
+
+        if(isset($request['rate']) )
+        {
+             $newCompete =  ['rating', '>=', $request['rate']];
+             array_push($where, $newCompete);
+        }
+
+
+        $user =  User::where($where)->get();
+        return response()->json(['User' => $user]);
+    }
     public function test()
     {
-        print("hi");
+        $query= User::first()->country;
+        //$query->country();
+        print($query);
     }
 
 
