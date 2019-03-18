@@ -166,7 +166,7 @@ class RecipeController extends Controller
         return response()->json(['Recipe' => $recipe]);
     }
 
-    public function push_favorites(Request $request, $id)
+    public function PushFavorites(Request $request, $id)
     {
       DB::table('recipe_box')->insert(
           ['recipe_id' => $id, 'user_id' => $request->user()->id]
@@ -174,10 +174,17 @@ class RecipeController extends Controller
       return response()->json(['Success' => 'Recipe added to favorites successfully!']);
     }
 
-    public function get_favorites()
+    public function GetFavorites(Request $request)
     {
-      $ids = DB::table('recipe_box')->select('recipe_id')->where('user_id', '=', $request->user()->id)->get();
-      $recipes = DB::table('recipes')->whereIn('id', $ids)->get();
+      try {
+        $ids = DB::table('recipe_box')->select('recipe_id')->where('user_id', '=', $request->user()->id)->get();
+        $recipes = DB::table('recipes')->whereIn('id', $ids)->get();
+      } catch (Exception $ex) {
+        return response()->json([
+          'Fail' => 'Favorites could not be retrieved!',
+          'error' => $ex->getMessage()
+        ]);
+      }
       return response()->json([
         'Success' => 'Favorites retrieved successfully!',
         'Data' => $recipes
@@ -185,7 +192,7 @@ class RecipeController extends Controller
     }
 
 
-    public function remove_favorites(Request $request, $id)
+    public function RemoveFavorites(Request $request, $id)
     {
       DB::table('recipe_box')->where([['recipe_id', '=', $id], ['user_id', '=', $request->user()->id]])->delete();
       return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
