@@ -15,12 +15,10 @@ class IngredientsController extends Controller
         return response()->json(['Ingredients' => $ingredients]);
     }
 
-
     public function create()
     {
         //
     }
-
 
     public function store(Request $request)
     {
@@ -40,12 +38,10 @@ class IngredientsController extends Controller
         return response()->json(['Ingredients' => $ingredients]);
     }
 
-
     public function edit($id)
     {
         //
     }
-
 
     public function update(Request $request, $id)
     {
@@ -58,7 +54,6 @@ class IngredientsController extends Controller
             ]
         );
     }
-
 
     public function destroy($id)
     {

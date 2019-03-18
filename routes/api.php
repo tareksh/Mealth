@@ -39,8 +39,6 @@ Route::get('test','API\UserController@test');
 /* country Api */
 
 Route::resource('countries','API\CountryController'/*, array('only' => array('show','index','destroy','update','create'))*/);
-Route::get('country/{id}','API\CountryController@GetCountry');
-Route::get('country','API\CountryController@GetAllCountry');
 Route::post('country-filter','API\CountryController@Country_Filter');
 
 
@@ -57,6 +55,11 @@ Route::delete('slider-image/{id}','API\SliderController@DeleteImage');
 
 Route::post('user-filter','API\UserController@UserFilter');
 Route::post('user-activate','API\UserController@UserActivate');
+Route::put('user-edit-myprofile','API\UserController@EditMyProfile')->middleware('auth:api');
+Route::put('user-edit-myprofile-image','API\UserController@EditMyProfileImage')->middleware('auth:api');
+
+Route::get('user-get-myprofile','API\UserController@GetMyProfile')->middleware('auth:api');
+
 
 
 
@@ -64,13 +67,15 @@ Route::post('user-activate','API\UserController@UserActivate');
 
 /* Cooker Api */
 Route::resource('cooker', 'API\CookerController', array('only' => array('index')));
-
+Route::get('cooker-best','API\CookerController@BestCooker');
+Route::get('cooker-filter','API\CookerController@CookerFiler');
 
 
 /* Recipe Api */
 Route::Post('recipe-filter','API\RecipeController@RecipeFilter');
 Route::post('recipe-activate','API\RecipeController@RecipeActivate');
-Route::get('recipe-best','API\RecipeController@RecipeBest');
+Route::get('recipe-best','API\RecipeController@BestRecipe');
+Route::get('recipe-all-info/{id}','API\RecipeController@RecipeWithAllInfo');
 Route::resource('recipe', 'API\RecipeController');
 
 
@@ -83,6 +88,11 @@ Route::resource('raw-material', 'API\RawMaterialController');
 
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
+
+
+
+
+
 
 
 

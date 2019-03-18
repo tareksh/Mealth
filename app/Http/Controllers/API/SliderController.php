@@ -18,12 +18,10 @@ class SliderController extends Controller
         );
     }
 
-
     public function DeleteImage(Request $request)
     {
         Slider::where('id',$request['id'])->delete();
     }
-
 
     public function InsertImage(Request $request)
     {
@@ -33,7 +31,6 @@ class SliderController extends Controller
             'order'=> $request['order']
         ]);
     }
-
 
     public function GetAllImage(Request $request)
     {

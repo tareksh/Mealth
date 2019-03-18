@@ -103,14 +103,91 @@ class UserController extends Controller
         return response()->json(['User' => $user]);
     }
 
+    public function EditMyProfile(Request $request)
+    {
+
+        $user = $request->user();
+        User::where('id',$user->id)->update
+        ([
+            'email'=>$request['email'],
+            'name'=>$request['name'],
+            'password'=>Hash::make($request['password']),
+            'description'=>$request['description'],
+            'phone_number'=>$request['phone_number'],
+            'country_id'=>$request['country_id'],
+            'image'=>$request['image'],
+
+        ]);
+    }
+
+    public function EditMyProfileImage(Request $request)
+    {
+
+        $user = $request->user();
+        User::where('id',$user->id)->update
+        ([
+            'image'=>$request['image'],
+        ]);
+    }
+
+    public function GetMyProfile(Request $request)
+    {
+
+        $user = $request->user();
+        $select =[
+            'email',
+            'name',
+            'description',
+            'phone_number',
+            'country_name',
+            'image'
+        ];
+        $user =  User::join('countries', 'countries.id', '=', 'users.country_id')->select($select)->where('users.id','=',$user->id)->get();
+        return response()->json(['User' => $user]);
+
+    }
+
     public function test()
     {
         $query= User::first()->country;
         print($query);
     }
 
+    public function AddRecipeBox(Request $request)
+    {
 
 
+         RecipeBox::create
+         ([
+             'user_id' => $request->user()->id,
+             'recipe_id'=> $request['recipe-id']
+         ]);
+
+    }
+
+    public function AddRecipeRating(Request $request)
+    {
+
+
+        RecipeRating::create
+        ([
+            'user_id' => $request->user()->id,
+            'recipe_id'=> $request['recipe-id'],
+            'rank_value'=> $request['rank_value-id']
+        ]);
+
+    }
+
+    public function AddCookerRating(Request $request)
+    {
+        RecipeRating::create
+        ([
+            'user_id' => $request->user()->id,
+            'cooker_id'=> $request['cooker_id'],
+            'rank_value'=> $request['rank_value-id'],
+            'description'=> $request['description']
+        ]);
+    }
 
 
 

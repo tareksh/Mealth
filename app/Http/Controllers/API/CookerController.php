@@ -7,11 +7,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 class CookerController extends UserController
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $cooker =  User::select('id','name')->where(
@@ -20,69 +16,74 @@ class CookerController extends UserController
         return response()->json(['Cooker' => $cooker]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
+    }
+
+    public function BestCooker (Request $request)
+    {
+        $cooker =  User::join('countries', 'countries.id', '=', 'users.country_id')->where('role','=','Cooker')->orderBy('rating','DESC')->get();
+        return response()->json(['Cooker' => $cooker]);
+    }
+
+    public function CookerFiler(Request $request)
+    {
+        $where = [];
+        $newCompete =   ['role','=','Cooker'];
+        array_push($where, $newCompete);
+
+
+        if(isset($request['name']))
+        {
+
+            $newCompete =  ['name', 'like','%'.$request['name'].'%'];
+            array_push($where, $newCompete);
+        }
+
+        if(isset($request['rate']) )
+        {
+            $newCompete =  ['rating', '>=', $request['rate']];
+            array_push($where, $newCompete);
+        }
+
+        if(isset($request['country_name']) )
+        {
+            $newCompete =  ['country_name', '=', $request['country_name']];
+            array_push($where, $newCompete);
+        }
+        $cooker =  User::join('countries', 'countries.id', '=', 'users.country_id')->where($where)->get();
+        return response()->json(['Cooker' => $cooker]);
+    }
+
+    public function CookerRecipe(Request $request)
+    {
+        $Recipe = Recipe::where('cooker_id','=',$request['cooker_id'])->get();
+        return response()->json(['Recipe' => $Recipe]);
     }
 }
