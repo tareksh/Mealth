@@ -184,7 +184,7 @@ class RecipeController extends Controller
       ]);
     }
 
-    public function remove_favorites($id)
+    public function remove_favorites(Request $request, $id)
     {
       DB::table('recipe_box')->where('recipe_id' => $id, 'user_id' => $request->user()->id)->delete();
       return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
