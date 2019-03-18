@@ -8,7 +8,7 @@ class Recipe extends Model
 {
     protected $table = 'recipe';
     protected $fillable = [
-        'recipe_name', 'recipe_description', 'recipe_image',
+        'recipe_name', 'recipe_description', 'recipe_image', 'cooker_id',
     ];
 
     public function cooker()

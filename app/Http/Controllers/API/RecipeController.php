@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class RecipeController extends Controller
@@ -22,7 +23,15 @@ class RecipeController extends Controller
 
     public function store(Request $request)
     {
-        //
+      $recipe = new Recipe;
+
+      $recipe->recipe_name = $request->recipe_name;
+      $recipe->recipe_description = $request->recipe_description;
+      $recipe->recipe_image = $request->recipe_image;
+      $recipe->cooker_id = $request->cooker_id;
+
+      $recipe->save();
+      return response()->json(['Success' => 'Recipe created successfully!']);
     }
 
     public function show($id)
@@ -38,7 +47,15 @@ class RecipeController extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        $recipe = Recipe::find($id);
+
+        $recipe->recipe_name = $request->recipe_name ? $request->recipe_name : $recipe->recipe_name;
+        $recipe->recipe_description = $request->recipe_description ? $request->recipe_description : $recipe->recipe_description;
+        $recipe->recipe_image = $request->recipe_image ? $request->recipe_image : $recipe->recipe_image;
+        $recipe->cooker_id = $request->cooker_id ? $request->cooker_id : $recipe->cooker_id;
+
+        $recipe->save();
+        return response()->json(['Success' => 'Recipe updated successfully!']);
     }
 
     public function destroy($id)
@@ -147,5 +164,29 @@ class RecipeController extends Controller
     {
         $recipe =  Recipe::orderBy('recipe_rating','DESC')->get();
         return response()->json(['Recipe' => $recipe]);
+    }
+
+    public function push_favorites(Request $request, $id)
+    {
+      DB::table('recipe_box')->insert(
+          ['recipe_id' => $id, 'user_id' => $request->user()->id]
+      );
+      return response()->json(['Success' => 'Recipe added to favorites successfully!']);
+    }
+
+    public function get_favorites()
+    {
+      $ids = DB::table('recipe_box')->select('recipe_id')->where('user_id', '=', $request->user()->id)->get();
+      $recipes = DB::table('recipes')->whereIn('id', $ids)->get();
+      return response()->json([
+        'Success' => 'Favorites retrieved successfully!',
+        'Data' => $recipes
+      ]);
+    }
+
+    public function remove_favorites($id)
+    {
+      DB::table('recipe_box')->where('recipe_id' => $id, 'user_id' => $request->user()->id)->delete();
+      return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
     }
 }
