@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce87fb0-e4fc-4edc-ae89-3e442e02cc4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/RecipeBox.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CookerRating.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CookerRating.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CookerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CookerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Recipe.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/RecipeRating.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RecipeRating.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_10_103336_create_cooker_ratings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_10_103336_create_cooker_ratings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_11_114652_create_recipe_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_11_114652_create_recipe_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -135,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
@@ -206,26 +196,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="178" column="37" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
+            <state relative-caret-position="258">
+              <caret line="201" selection-start-line="201" selection-end-line="201" />
               <folding>
                 <element signature="e#44#64#0#PHP" expanded="true" />
-                <element signature="e#176#301#0#PHP" />
-                <element signature="e#307#354#0#PHP" />
-                <element signature="e#360#422#0#PHP" />
-                <element signature="e#428#572#0#PHP" />
-                <element signature="e#578#626#0#PHP" />
-                <element signature="e#632#700#0#PHP" />
-                <element signature="e#706#757#0#PHP" />
-                <element signature="e#763#3320#0#PHP" />
-                <element signature="e#3326#3515#0#PHP" />
-                <element signature="e#3521#3701#0#PHP" />
-                <element signature="e#3711#3770#0#PHP" />
-                <element signature="e#4322#4378#0#PHP" />
-                <element signature="e#4553#4764#0#PHP" />
+                <element signature="e#1755#4312#0#PHP" />
+                <element signature="e#4318#4507#0#PHP" />
+                <element signature="e#4699#5252#0#PHP" />
+                <element signature="e#5258#5469#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -399,7 +380,6 @@
         <option value="$PROJECT_DIR$/app/RecipeRating.php" />
         <option value="$PROJECT_DIR$/app/CookerRating.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_10_103336_create_cooker_ratings_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" />
@@ -407,6 +387,7 @@
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" />
       </list>
     </option>
   </component>
@@ -516,7 +497,7 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="303" />
     <option name="y" value="157" />
     <option name="width" value="1036" />
@@ -645,15 +626,15 @@
       <workItem from="1552555159109" duration="676000" />
       <workItem from="1552806388584" duration="2837000" />
       <workItem from="1552810029243" duration="22945000" />
-      <workItem from="1552893831863" duration="20818000" />
+      <workItem from="1552893831863" duration="21503000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174554000" />
+    <option name="totallyTimeSpent" value="175239000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8270893" visible="true" weight="0.38880485" />
@@ -690,12 +671,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php</url>
-          <line>51</line>
+          <line>65</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php</url>
-          <line>20</line>
+          <line>18</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -705,12 +686,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php</url>
-          <line>148</line>
+          <line>162</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php</url>
-          <line>46</line>
+          <line>52</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -1116,29 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="178" column="37" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
-          <folding>
-            <element signature="e#44#64#0#PHP" expanded="true" />
-            <element signature="e#176#301#0#PHP" />
-            <element signature="e#307#354#0#PHP" />
-            <element signature="e#360#422#0#PHP" />
-            <element signature="e#428#572#0#PHP" />
-            <element signature="e#578#626#0#PHP" />
-            <element signature="e#632#700#0#PHP" />
-            <element signature="e#706#757#0#PHP" />
-            <element signature="e#763#3320#0#PHP" />
-            <element signature="e#3326#3515#0#PHP" />
-            <element signature="e#3521#3701#0#PHP" />
-            <element signature="e#3711#3770#0#PHP" />
-            <element signature="e#4322#4378#0#PHP" />
-            <element signature="e#4553#4764#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -1157,6 +1115,20 @@
             <element signature="e#4124#4201#0#PHP" />
             <element signature="e#4333#4539#0#PHP" />
             <element signature="e#4602#4664#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
+          <folding>
+            <element signature="e#44#64#0#PHP" expanded="true" />
+            <element signature="e#1755#4312#0#PHP" />
+            <element signature="e#4318#4507#0#PHP" />
+            <element signature="e#4699#5252#0#PHP" />
+            <element signature="e#5258#5469#0#PHP" />
           </folding>
         </state>
       </provider>

@@ -77,8 +77,9 @@ Route::post('recipe-activate','API\RecipeController@RecipeActivate');
 Route::get('recipe-best','API\RecipeController@BestRecipe');
 Route::get('recipe-all-info/{id}','API\RecipeController@RecipeWithAllInfo');
 Route::resource('recipe', 'API\RecipeController');
-
-
+Route::post('recipe/favorites/{id}', 'API\RecipeController@push_favorites');
+Route::delete('recipe/favorites/{id}', 'API\RecipeController@remove_favorites');
+Route::get('recipe/favorites', 'API\RecipeController@get_favorites');
 /*Ingredients Api */
 Route::resource('ingredients', 'API\IngredientsController');
 
@@ -88,6 +89,7 @@ Route::resource('raw-material', 'API\RawMaterialController');
 
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
+<<<<<<< HEAD
 
 
 
@@ -99,3 +101,5 @@ Route::resource('raw-material-price', 'API\RawMaterialPriceController');
 
 
 
+=======
+>>>>>>> 9fb421c394f0531f044cd3224c3863fc5ade29c7

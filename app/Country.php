@@ -12,7 +12,6 @@ class Country extends Model
         'currency_name',
         'currency_symbol',
         'exchange_rate',
-
     ];
 
 }
