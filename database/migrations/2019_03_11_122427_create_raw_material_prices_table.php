@@ -18,6 +18,7 @@ class CreateRawMaterialPricesTable extends Migration
             $table->integer('raw_material_id');
             $table->integer('country_id');
             $table->integer('price');
+            $table->timestamps();
 
         });
     }

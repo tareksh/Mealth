@@ -13,11 +13,7 @@ use Validator;
 class UserController extends Controller
 {
     public $successStatus = 200;
-    /**
-     * login api
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function login(Request $request){
 
         if(!Auth::attempt(['email' => $request['email'], 'password' =>  $request['password']]))
@@ -29,21 +25,18 @@ class UserController extends Controller
         $token = $user->createToken('LPAC')-> accessToken;
         return response()->json(['$token' => $token], $this-> successStatus);
     }
-    /*
-     *
-     * Register api
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function register(Request $request)
     {
-        $data = request()->only('email','name','password','role');
 
         $user = new User();
-        $user->email = $data['email'];
-        $user->name = $data['name'];
-        $user->password = Hash::make($data['password']) ;
-        $user->role = $data['role'];
+        $user->email = $request['email'];
+        $user->name = $request['name'];
+        $user->password = Hash::make($request['password']) ;
+        $user->role = $request['role'];
+        $user->phone_number = $request['phone_number'];
+        $user->country_id = $request['country_id'];
+        $user->image = $request['image'];
         $user->save();
         // And created user until here.
 
@@ -53,8 +46,8 @@ class UserController extends Controller
             'grant_type'    => 'password',
             'client_id'     => $client->id,
             'client_secret' => $client->secret,
-            'username'      => $data['email'],
-            'password'      => $data['password'],
+            'username'      => $request['email'],
+            'password'      => $request['password'],
             'scope'         => null,
         ]);
 
@@ -65,17 +58,22 @@ class UserController extends Controller
         );
         return \Route::dispatch($token);
     }
-    /**
-     * details api
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function details (Request $request)
     {
         print_r($request->user());
     }
 
+    public function UserActivate(Request $request)
+    {
 
+        $user =  User::where('id',$request['id'])->update
+        ([
+            'active' => $request['active'],
+
+         ]);
+
+    }
 
     public function UserFilter(Request $request)
     {
@@ -104,10 +102,10 @@ class UserController extends Controller
         $user =  User::where($where)->get();
         return response()->json(['User' => $user]);
     }
+
     public function test()
     {
         $query= User::first()->country;
-        //$query->country();
         print($query);
     }
 

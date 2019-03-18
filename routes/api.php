@@ -37,11 +37,10 @@ Route::group(['middleware' => ['auth:api']], function() {
 Route::get('test','API\UserController@test');
 
 /* country Api */
-Route::get('country','API\CountryController@GetAllCountry');
+
+Route::resource('countries','API\CountryController'/*, array('only' => array('show','index','destroy','update','create'))*/);
 Route::get('country/{id}','API\CountryController@GetCountry');
-Route::post('country','API\CountryController@InsertCountry');
-Route::post('country/{id}','API\CountryController@UpdateCountry');
-Route::delete('country/{id}','API\CountryController@DeleteCountry');
+Route::get('country','API\CountryController@GetAllCountry');
 Route::post('country-filter','API\CountryController@Country_Filter');
 
 
@@ -57,13 +56,35 @@ Route::delete('slider-image/{id}','API\SliderController@DeleteImage');
 /* user Api */
 
 Route::post('user-filter','API\UserController@UserFilter');
+Route::post('user-activate','API\UserController@UserActivate');
 
 
 
 
 
+/* Cooker Api */
+Route::resource('cooker', 'API\CookerController', array('only' => array('index')));
 
-//Route::post('shit', 'API\UserController@authenticate');
+
+
+/* Recipe Api */
+Route::Post('recipe-filter','API\RecipeController@RecipeFilter');
+Route::post('recipe-activate','API\RecipeController@RecipeActivate');
+Route::get('recipe-best','API\RecipeController@RecipeBest');
+Route::resource('recipe', 'API\RecipeController');
+
+
+/*Ingredients Api */
+Route::resource('ingredients', 'API\IngredientsController');
+
+
+/*Raw Material Api */
+Route::resource('raw-material', 'API\RawMaterialController');
+
+/*Raw Material Price Api */
+Route::resource('raw-material-price', 'API\RawMaterialPriceController');
+
+
 
 
 

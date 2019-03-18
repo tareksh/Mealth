@@ -8,22 +8,29 @@ use App\Http\Controllers\Controller;
 
 class CountryController extends Controller
 {
-    public function GetAllCountry()
+
+    public function index()
     {
         $country =  Country::All();
         return response()->json(['Countries' => $country]);
     }
 
-    public function GetCountry(Request $request)
+    public function show($id)
     {
-        $country =  Country::where('id',$request['id'])->first();
+        $country =  Country::where('id',$id)->first();
         return response()->json(['Country' => $country]);
     }
 
-
-    public function UpdateCountry(Request $request)
+    public function destroy($id)
     {
-        $country =  Country::where('id',$request['id'])->update
+        Country::where('id',$id)->delete();
+
+    }
+
+
+    public function update(Request $request, $id)
+    {
+        Country::where('id',$id)->update
         ([
                 'country_name' => $request['country_name'],
                 'currency_name'=> $request['currency_name'],
@@ -34,13 +41,7 @@ class CountryController extends Controller
     }
 
 
-    public function DeleteCountry(Request $request)
-    {
-        Country::where('id',$request['id'])->delete();
-    }
-
-
-    public function InsertCountry(Request $request)
+    public function store(Request $request)
     {
         Country::create
         ([
@@ -51,6 +52,30 @@ class CountryController extends Controller
 
         ]);
     }
+    public function create()
+    {
+
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function GetAllCountry()
+    {
+        $country =  Country::select('id','country_name')->get();
+        return response()->json(['Country' => $country]);
+    }
+
+    public function GetCountry($id)
+    {
+
+        $country =  Country::select('id','country_name')->where('id',$id)->first();
+        return response()->json(['Country' => $country]);
+    }
+
+
 
     public function Country_Filter(Request $request)
     {

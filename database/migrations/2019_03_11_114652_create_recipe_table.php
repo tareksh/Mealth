@@ -17,12 +17,18 @@ class CreateRecipeTable extends Migration
             $table->bigIncrements('id');
             $table->string('recipe_name');
             $table->longText('recipe_description');
-            $table->string('recipe_video');
+            $table->string('recipe_video')->nullable();
             $table->string("recipe_kind");
             $table->integer('recipe_calories');
+            $table->integer('recipe_rating')->default(0);
+
             $table->integer('preparation_time');
             $table->integer('cooker_id');
-            $table->integer('user_count');
+            $table->string('season')->nullable();
+            $table->integer('views')->default(0);
+            $table->integer('user_count')->default(1);
+            $table->boolean('active')->default(true);
+
             $table->timestamps();
         });
     }
