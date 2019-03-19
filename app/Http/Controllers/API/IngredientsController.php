@@ -15,12 +15,10 @@ class IngredientsController extends Controller
         return response()->json(['Ingredients' => $ingredients]);
     }
 
-
     public function create()
     {
         //
     }
-
 
     public function store(Request $request)
     {
@@ -40,25 +38,41 @@ class IngredientsController extends Controller
         return response()->json(['Ingredients' => $ingredients]);
     }
 
-
     public function edit($id)
     {
         //
     }
 
-
     public function update(Request $request, $id)
     {
+
+        $update = [];
+
+        if(isset($request['recipe_id']))
+        {
+            $update['recipe_id'] = $request['recipe_id'];
+        }
+        if(isset($request['description']))
+        {
+            $update['description'] = $request['description'];
+
+        }
+        if(isset($request['raw_material_id']))
+        {
+            $update['raw_material_id'] = $request['raw_material_id'];
+
+        }
+        if(isset($request['amount']))
+        {
+            $update['amount'] = $request['amount'];
+
+        }
+
         Ingredients::where('id',$id)->update
-        ([
-                'recipe_id'=>$request['recipe_id'],
-                'description'=>$request['description'],
-                'raw_material_id'=>$request['raw_material_id'],
-                'amount'=>$request['amount']
-            ]
+        (
+            $update
         );
     }
-
 
     public function destroy($id)
     {

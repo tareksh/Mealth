@@ -18,7 +18,7 @@ class CreateCookerRatingsTable extends Migration
             $table->integer("user_id");
             $table->integer("cooker_id");
             $table->integer("rating_value");
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->timestamps();
         });
     }

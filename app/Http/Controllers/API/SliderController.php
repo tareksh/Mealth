@@ -8,24 +8,31 @@ use App\Http\Controllers\Controller;
 
 class SliderController extends Controller
 {
-    public function EditImage(Request $request)
+    public function update(Request $request, $id)
     {
-        $country =  Slider::where('id',$request['id'])->update
-        ([
-                'image' => $request['image'],
-                'order'=> $request['order']
-                ]
+        $update = [];
+
+        if(isset($request['image']))
+        {
+            $update['image'] = $request['image'];
+        }
+        if(isset($request['order']))
+        {
+            $update['order'] = $request['order'];
+
+        }
+         Slider::where('id','=',$id)->update
+        (
+            $update
         );
     }
 
-
-    public function DeleteImage(Request $request)
+    public function destroy($id)
     {
-        Slider::where('id',$request['id'])->delete();
+        Slider::where('id',$id)->delete();
     }
 
-
-    public function InsertImage(Request $request)
+    public function store(Request $request)
     {
         Slider::create
         ([
@@ -34,16 +41,15 @@ class SliderController extends Controller
         ]);
     }
 
-
-    public function GetAllImage(Request $request)
+    public function index(Request $request)
     {
         $slider = Slider::All();
         return response()->json(['Slider' => $slider]);
     }
 
-    public function GetImage(Request $request)
+    public function show($id)
     {
-        $slider =  Slider::where('id',$request['id'])->first();
+        $slider =  Slider::where('id',$id)->first();
         return response()->json(['Slider' => $slider]);
     }
 }

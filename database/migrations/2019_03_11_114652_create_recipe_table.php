@@ -21,7 +21,6 @@ class CreateRecipeTable extends Migration
             $table->string("recipe_kind");
             $table->integer('recipe_calories');
             $table->integer('recipe_rating')->default(0);
-
             $table->integer('preparation_time');
             $table->integer('cooker_id');
             $table->string('season')->nullable();

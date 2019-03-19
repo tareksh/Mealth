@@ -27,19 +27,36 @@ class CountryController extends Controller
 
     }
 
-
     public function update(Request $request, $id)
     {
-        Country::where('id',$id)->update
-        ([
-                'country_name' => $request['country_name'],
-                'currency_name'=> $request['currency_name'],
-                'currency_symbol'=> $request['currency_symbol'],
-                'exchange_rate'=> $request['exchange_rate']
-            ]
-        );
-    }
+        $update = [];
 
+        if(isset($request['country_name']))
+        {
+            $update['country_name'] = $request['country_name'];
+        }
+        if(isset($request['currency_name']))
+        {
+            $update['currency_name'] = $request['currency_name'];
+
+        }
+        if(isset($request['currency_symbol']))
+        {
+            $update['currency_symbol'] = $request['currency_symbol'];
+
+        }
+        if(isset($request['exchange_rate']))
+        {
+            $update['exchange_rate'] = $request['exchange_rate'];
+
+        }
+
+        Country::where('id',$id)->update
+            (
+                $update
+            );
+
+    }
 
     public function store(Request $request)
     {
@@ -52,6 +69,7 @@ class CountryController extends Controller
 
         ]);
     }
+
     public function create()
     {
 
@@ -74,8 +92,6 @@ class CountryController extends Controller
         $country =  Country::select('id','country_name')->where('id',$id)->first();
         return response()->json(['Country' => $country]);
     }
-
-
 
     public function Country_Filter(Request $request)
     {

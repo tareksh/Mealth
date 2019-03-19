@@ -41,24 +41,21 @@ Route::get('test','API\UserController@test');
 /* country Api */
 
 Route::resource('countries','API\CountryController'/*, array('only' => array('show','index','destroy','update','create'))*/);
-Route::get('country/{id}','API\CountryController@GetCountry');
-Route::get('country','API\CountryController@GetAllCountry');
 Route::post('country-filter','API\CountryController@Country_Filter');
 
 
 /* slider Api */
 
-Route::get('slider-image','API\SliderController@GetAllImage');
-Route::get('slider-image/{id}','API\SliderController@GetImage');
-Route::post('slider-image','API\SliderController@InsertImage');
-Route::post('slider-image/{id}','API\SliderController@EditImage');
-Route::delete('slider-image/{id}','API\SliderController@DeleteImage');
-
+Route::resource('slider-image','API\SliderController');
 
 /* user Api */
 
 Route::post('user-filter','API\UserController@UserFilter');
 Route::post('user-activate','API\UserController@UserActivate');
+Route::put('user-edit-myprofile','API\UserController@EditMyProfile')->middleware('auth:api');
+Route::put('user-edit-myprofile-image','API\UserController@EditMyProfileImage')->middleware('auth:api');
+Route::get('user-get-myprofile','API\UserController@GetMyProfile')->middleware('auth:api');
+
 
 
 
@@ -66,14 +63,22 @@ Route::post('user-activate','API\UserController@UserActivate');
 
 /* Cooker Api */
 Route::resource('cooker', 'API\CookerController', array('only' => array('index')));
-
+Route::get('cooker-best','API\CookerController@BestCooker');
+Route::get('cooker-filter','API\CookerController@CookerFiler');
 
 
 /* Recipe Api */
 Route::Post('recipe-filter','API\RecipeController@RecipeFilter');
 Route::post('recipe-activate','API\RecipeController@RecipeActivate');
-Route::get('recipe-best','API\RecipeController@RecipeBest');
+Route::get('recipe-best','API\RecipeController@BestRecipe');
+Route::get('recipe-all-info/{id}','API\RecipeController@RecipeWithAllInfo');
 Route::resource('recipe', 'API\RecipeController');
+<<<<<<< HEAD
+Route::post('recipe/favorites/{id}', 'API\RecipeController@push_favorites');
+Route::delete('recipe/favorites/{id}', 'API\RecipeController@remove_favorites');
+Route::get('recipe/favorites', 'API\RecipeController@get_favorites');
+=======
+>>>>>>> 6b0c622392c41cfe460e5d748d18ebc7aa91ff83
 
 /*Ingredients Api */
 Route::resource('ingredients', 'API\IngredientsController');
@@ -85,7 +90,10 @@ Route::resource('raw-material', 'API\RawMaterialController');
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
 
+<<<<<<< HEAD
+=======
 /* favorites Api */
 Route::post('favorites/{id}', 'API\RecipeController@PushFavorites');
 Route::delete('favorites/{id}', 'API\RecipeController@RemoveFavorites');
 Route::get('favorites', 'API\RecipeController@GetFavorites');
+>>>>>>> 6b0c622392c41cfe460e5d748d18ebc7aa91ff83

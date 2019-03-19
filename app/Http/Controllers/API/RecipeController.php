@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Ingredients;
 use App\Recipe;
+use App\RecipeImage;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -172,11 +175,36 @@ class RecipeController extends Controller
         ]);
     }
 
-    public function RecipeBest (Request $request)
+    public function BestRecipe (Request $request)
     {
         $recipe =  Recipe::orderBy('recipe_rating','DESC')->get();
         return response()->json(['Recipe' => $recipe]);
     }
+
+    public function RecipeWithAllInfo($id)
+    {
+        $Recipe = Recipe::where('id','=',$id)->first();
+        $ingredients =  Ingredients::where('recipe_id','=',$id)->get();
+        $recipe_image = RecipeImage::where('recipe_id','=',$id)->get();
+        $user = User::where('id','=',$Recipe['cooker_id'])->get();
+
+        $array =[];
+        array_push($array, $Recipe);
+        array_push($array, $ingredients);
+        array_push($array, $recipe_image);
+        array_push($array, $user);
+
+        return response()->json(['Recipe' => $array]);
+
+
+    }
+
+    public function RecipeComments($id)
+    {
+        $comment = Comment::join('users', 'user_id', '=', 'users.id')->where('recipe_id','=',$id)->get();
+        return response()->json(['Comment' => $comment]);
+    }
+
 
     public function PushFavorites(Request $request, $id)
     {
@@ -207,6 +235,7 @@ class RecipeController extends Controller
         'Data' => $recipes
       ]);
     }
+
 
 
     public function RemoveFavorites(Request $request, $id)
