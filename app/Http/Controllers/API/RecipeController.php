@@ -168,6 +168,12 @@ class RecipeController extends Controller
 
     public function PushFavorites(Request $request, $id)
     {
+      if (!$request->user()) {
+        return response()->json([
+          'Fail' => 'Favorites could not be retrieved!',
+          'error' => 'Unauthenticated : Missing Token'
+        ]);
+      }
       DB::table('recipe_box')->insert(
           ['recipe_id' => $id, 'user_id' => $request->user()->id]
       );
@@ -176,15 +182,14 @@ class RecipeController extends Controller
 
     public function GetFavorites(Request $request)
     {
-      try {
-        $ids = DB::table('recipe_box')->select('recipe_id')->where('user_id', '=', $request->user()->id)->get();
-        $recipes = DB::table('recipes')->whereIn('id', $ids)->get();
-      } catch (Exception $ex) {
+      if (!$request->user()) {
         return response()->json([
           'Fail' => 'Favorites could not be retrieved!',
-          'error' => $ex->getMessage()
+          'error' => 'Unauthenticated : Missing Token'
         ]);
       }
+      $ids = DB::table('recipe_box')->select('recipe_id')->where('user_id', '=', $request->user()->id)->get();
+      $recipes = DB::table('recipes')->whereIn('id', $ids)->get();
       return response()->json([
         'Success' => 'Favorites retrieved successfully!',
         'Data' => $recipes
@@ -194,6 +199,12 @@ class RecipeController extends Controller
 
     public function RemoveFavorites(Request $request, $id)
     {
+      if (!$request->user()) {
+        return response()->json([
+          'Fail' => 'Favorites could not be retrieved!',
+          'error' => 'Unauthenticated : Missing Token'
+        ]);
+      }
       DB::table('recipe_box')->where([['recipe_id', '=', $id], ['user_id', '=', $request->user()->id]])->delete();
       return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
     }

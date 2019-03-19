@@ -31,9 +31,7 @@ Route::group(['middleware' => ['auth:api']], function() {
             'roles' => ['Admin']
         ]);
     // favorites
-    Route::post('favorites/{id}', 'API\RecipeController@PushFavorites');
-    Route::delete('favorites/{id}', 'API\RecipeController@RemoveFavorites');
-    Route::get('favorites', 'API\RecipeController@GetFavorites');
+
 
 
 });
@@ -86,3 +84,8 @@ Route::resource('raw-material', 'API\RawMaterialController');
 
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
+
+/* favorites Api */
+Route::post('favorites/{id}', 'API\RecipeController@PushFavorites');
+Route::delete('favorites/{id}', 'API\RecipeController@RemoveFavorites');
+Route::get('favorites', 'API\RecipeController@GetFavorites');
