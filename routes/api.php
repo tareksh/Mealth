@@ -73,6 +73,13 @@ Route::post('recipe-activate','API\RecipeController@RecipeActivate');
 Route::get('recipe-best','API\RecipeController@BestRecipe');
 Route::get('recipe-all-info/{id}','API\RecipeController@RecipeWithAllInfo');
 Route::resource('recipe', 'API\RecipeController');
+
+/* Images and videos handling */
+Route::post('recipe/{id}/image', 'API\RecipeController@PushImage');
+Route::post('recipe/{id}/video', 'API\RecipeController@PushVideo');
+Route::delete('recipe/{id}/image', 'API\RecipeController@RemoveImage');
+Route::delete('recipe/{id}/video', 'API\RecipeController@RemoveVideo');
+
 <<<<<<< HEAD
 Route::post('recipe/favorites/{id}', 'API\RecipeController@push_favorites');
 Route::delete('recipe/favorites/{id}', 'API\RecipeController@remove_favorites');

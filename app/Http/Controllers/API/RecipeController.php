@@ -287,27 +287,33 @@ class RecipeController extends Controller
           $recipe->recipe_video = $name;
           $recipe->save();
 
-          return response()->json(['Success' => 'Image added to recipe successfully!']);
+          return response()->json(['Success' => 'Video added to recipe successfully!']);
       }
-      return response()->json(['Fail' => 'No image was provided']);
+      return response()->json(['Fail' => 'No video was provided']);
     }
 
     public function RemoveImage($id)
     {
       DB::table('recipe_images')->where([['recipe_id', '=', $id], ['image', '=', $request->$image]])->delete();
       $destinationPath = public_path('/images').'/'.$request->$name;
-      unlink($image_path);
-      return response()->json(['Success' => 'Image removed from recipe images successfully!']);
+      if (file_exists($destinationPath)) {
+        unlink($destinationPath);
+        return response()->json(['Success' => 'Image removed from recipe images successfully!']);
+      }
+      return response()->json(['Fail' => 'Image does not exist!']);
     }
 
     public function RemoveVideo($id)
     {
       $recipe = Recipe::find($id);
       $destinationPath = public_path('/videos').'/'.$recipe->recipe_video;
-      unlink($image_path);
-      $recipe->recipe_video = "";
-      $recipe->save();
-      return response()->json(['Success' => 'Video removed from recipe successfully!']);
+      if (file_exists($destinationPath)) {
+        unlink($destinationPath);
+        $recipe->recipe_video = "";
+        $recipe->save();
+        return response()->json(['Success' => 'Video removed from recipe successfully!']);
+      }
+      return response()->json(['Fail' => 'Video does not exist!']);
     }
 
 }
