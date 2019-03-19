@@ -23,12 +23,18 @@ class RecipeController extends Controller
 
     public function store(Request $request)
     {
+      if (!$request->user()) {
+        return response()->json([
+          'Fail' => 'Favorites could not be retrieved!',
+          'error' => 'Unauthenticated : Missing Token'
+        ]);
+      }
       $recipe = new Recipe;
 
       $recipe->recipe_name = $request->recipe_name;
       $recipe->recipe_description = $request->recipe_description;
       $recipe->recipe_image = $request->recipe_image;
-      $recipe->cooker_id = $request->cooker_id;
+      $recipe->cooker_id = $request->user()->id;
 
       $recipe->save();
       return response()->json(['Success' => 'Recipe created successfully!']);
@@ -47,12 +53,18 @@ class RecipeController extends Controller
 
     public function update(Request $request, $id)
     {
+        if (!$request->user()) {
+          return response()->json([
+            'Fail' => 'Favorites could not be retrieved!',
+            'error' => 'Unauthenticated : Missing Token'
+          ]);
+        }
         $recipe = Recipe::find($id);
 
         $recipe->recipe_name = $request->recipe_name ? $request->recipe_name : $recipe->recipe_name;
         $recipe->recipe_description = $request->recipe_description ? $request->recipe_description : $recipe->recipe_description;
         $recipe->recipe_image = $request->recipe_image ? $request->recipe_image : $recipe->recipe_image;
-        $recipe->cooker_id = $request->cooker_id ? $request->cooker_id : $recipe->cooker_id;
+        $recipe->cooker_id = $request->user()->id;
 
         $recipe->save();
         return response()->json(['Success' => 'Recipe updated successfully!']);
