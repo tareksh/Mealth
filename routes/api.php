@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth:api']], function() {
             'middleware' => 'roles',
             'roles' => ['Admin']
         ]);
+    // favorites
+
 
 
 });
@@ -71,9 +73,12 @@ Route::post('recipe-activate','API\RecipeController@RecipeActivate');
 Route::get('recipe-best','API\RecipeController@BestRecipe');
 Route::get('recipe-all-info/{id}','API\RecipeController@RecipeWithAllInfo');
 Route::resource('recipe', 'API\RecipeController');
+<<<<<<< HEAD
 Route::post('recipe/favorites/{id}', 'API\RecipeController@push_favorites');
 Route::delete('recipe/favorites/{id}', 'API\RecipeController@remove_favorites');
 Route::get('recipe/favorites', 'API\RecipeController@get_favorites');
+=======
+>>>>>>> 6b0c622392c41cfe460e5d748d18ebc7aa91ff83
 
 /*Ingredients Api */
 Route::resource('ingredients', 'API\IngredientsController');
@@ -85,3 +90,10 @@ Route::resource('raw-material', 'API\RawMaterialController');
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
 
+<<<<<<< HEAD
+=======
+/* favorites Api */
+Route::post('favorites/{id}', 'API\RecipeController@PushFavorites');
+Route::delete('favorites/{id}', 'API\RecipeController@RemoveFavorites');
+Route::get('favorites', 'API\RecipeController@GetFavorites');
+>>>>>>> 6b0c622392c41cfe460e5d748d18ebc7aa91ff83
