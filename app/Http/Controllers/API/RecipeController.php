@@ -220,4 +220,65 @@ class RecipeController extends Controller
       DB::table('recipe_box')->where([['recipe_id', '=', $id], ['user_id', '=', $request->user()->id]])->delete();
       return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
     }
+
+    public function PushImage(Request $request, $id)
+    {
+
+      $this->validate($request, [
+          'input_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+      ]);
+
+      if ($request->hasFile('input_img')) {
+          $image = $request->file('input_img');
+          $name = $image->getClientOriginalName();
+          $destinationPath = public_path('/images');
+          $image->move($destinationPath, $name);
+          DB::table('recipe_images')->insert(
+              ['recipe_id' => $id, 'image' => $name]
+          );
+          return response()->json(['Success' => 'Image added to recipe successfully!']);
+      }
+      return response()->json(['Fail' => 'No image was provided']);
+    }
+
+    public function PushVideo($id)
+    {
+
+      $this->validate($request, [
+          'input_video' => 'required|mimes:flv,mp4,m3u8,ts,3gp,mov,avi,wmv|max:102400',
+      ]);
+
+      if ($request->hasFile('input_video')) {
+          $video = $request->file('input_video');
+          $name = $video->getClientOriginalName();
+          $destinationPath = public_path('/videos');
+          $video->move($destinationPath, $name);
+
+          $recipe = Recipe::find($id);
+          $recipe->recipe_video = $name;
+          $recipe->save();
+
+          return response()->json(['Success' => 'Image added to recipe successfully!']);
+      }
+      return response()->json(['Fail' => 'No image was provided']);
+    }
+
+    public function RemoveImage($id)
+    {
+      DB::table('recipe_images')->where([['recipe_id', '=', $id], ['image', '=', $request->$image]])->delete();
+      $destinationPath = public_path('/images').'/'.$request->$name;
+      unlink($image_path);
+      return response()->json(['Success' => 'Image removed from recipe images successfully!']);
+    }
+
+    public function RemoveVideo($id)
+    {
+      $recipe = Recipe::find($id);
+      $destinationPath = public_path('/videos').'/'.$recipe->recipe_video;
+      unlink($image_path);
+      $recipe->recipe_video = "";
+      $recipe->save();
+      return response()->json(['Success' => 'Video removed from recipe successfully!']);
+    }
+
 }
