@@ -153,41 +153,6 @@ class UserController extends Controller
         print($query);
     }
 
-    public function AddRecipeBox(Request $request)
-    {
-
-
-         RecipeBox::create
-         ([
-             'user_id' => $request->user()->id,
-             'recipe_id'=> $request['recipe-id']
-         ]);
-
-    }
-
-    public function AddRecipeRating(Request $request)
-    {
-
-
-        RecipeRating::create
-        ([
-            'user_id' => $request->user()->id,
-            'recipe_id'=> $request['recipe-id'],
-            'rank_value'=> $request['rank_value-id']
-        ]);
-
-    }
-
-    public function AddCookerRating(Request $request)
-    {
-        RecipeRating::create
-        ([
-            'user_id' => $request->user()->id,
-            'cooker_id'=> $request['cooker_id'],
-            'rank_value'=> $request['rank_value-id'],
-            'description'=> $request['description']
-        ]);
-    }
 
 
 

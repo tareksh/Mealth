@@ -44,12 +44,7 @@ Route::post('country-filter','API\CountryController@Country_Filter');
 
 /* slider Api */
 
-Route::get('slider-image','API\SliderController@GetAllImage');
-Route::get('slider-image/{id}','API\SliderController@GetImage');
-Route::post('slider-image','API\SliderController@InsertImage');
-Route::post('slider-image/{id}','API\SliderController@EditImage');
-Route::delete('slider-image/{id}','API\SliderController@DeleteImage');
-
+Route::resource('slider-image','API\SliderController');
 
 /* user Api */
 
@@ -57,7 +52,6 @@ Route::post('user-filter','API\UserController@UserFilter');
 Route::post('user-activate','API\UserController@UserActivate');
 Route::put('user-edit-myprofile','API\UserController@EditMyProfile')->middleware('auth:api');
 Route::put('user-edit-myprofile-image','API\UserController@EditMyProfileImage')->middleware('auth:api');
-
 Route::get('user-get-myprofile','API\UserController@GetMyProfile')->middleware('auth:api');
 
 
@@ -80,6 +74,7 @@ Route::resource('recipe', 'API\RecipeController');
 Route::post('recipe/favorites/{id}', 'API\RecipeController@push_favorites');
 Route::delete('recipe/favorites/{id}', 'API\RecipeController@remove_favorites');
 Route::get('recipe/favorites', 'API\RecipeController@get_favorites');
+
 /*Ingredients Api */
 Route::resource('ingredients', 'API\IngredientsController');
 
@@ -89,17 +84,4 @@ Route::resource('raw-material', 'API\RawMaterialController');
 
 /*Raw Material Price Api */
 Route::resource('raw-material-price', 'API\RawMaterialPriceController');
-<<<<<<< HEAD
 
-
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 9fb421c394f0531f044cd3224c3863fc5ade29c7

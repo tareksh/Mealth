@@ -51,18 +51,11 @@ class CountryController extends Controller
 
         }
 
-       print_r($update) ;
-            Country::where('id',$id)->update
-            ($update
+        Country::where('id',$id)->update
+            (
+                $update
             );
-       /* Country::where('id',$id)->update
-        ([
-                'country_name' => $request['country_name'],
-                'currency_name'=> $request['currency_name'],
-                'currency_symbol'=> $request['currency_symbol'],
-                'exchange_rate'=> $request['exchange_rate']
-            ]
-        );*/
+
     }
 
     public function store(Request $request)

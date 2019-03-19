@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dce87fb0-e4fc-4edc-ae89-3e442e02cc4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Country.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Country.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Recipe.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
@@ -73,7 +76,7 @@
     <session id="1054393627">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.33" value="1" />
@@ -90,25 +93,25 @@
         <counts>
           <entry key="dummy" value="20" />
           <entry key="env" value="9" />
-          <entry key="php" value="5253" />
+          <entry key="php" value="5288" />
           <entry key="txt" value="1229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="5253" />
+          <entry key="PHP" value="5288" />
           <entry key="PLAIN_TEXT" value="1258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="env" value="1" />
-          <entry key="php" value="215" />
+          <entry key="php" value="218" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="215" />
+          <entry key="PHP" value="218" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
@@ -119,8 +122,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            <state relative-caret-position="61">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Country.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Recipe.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_11_122539_create_sliders_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-44">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -128,22 +158,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+            <state relative-caret-position="126">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
               <folding>
                 <element signature="e#42#70#0#PHP" expanded="true" />
-                <element signature="e#387#801#0#PHP" />
                 <element signature="e#807#1847#0#PHP" />
-                <element signature="e#1853#1942#0#PHP" />
                 <element signature="e#1948#2135#0#PHP" />
                 <element signature="e#2141#2830#0#PHP" />
                 <element signature="e#2837#3331#0#PHP" />
                 <element signature="e#3337#3543#0#PHP" />
                 <element signature="e#3550#4010#0#PHP" />
                 <element signature="e#4016#4113#0#PHP" />
-                <element signature="e#4124#4201#0#PHP" />
-                <element signature="e#4333#4539#0#PHP" />
-                <element signature="e#4602#4664#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -152,35 +177,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="126">
+              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding>
                 <element signature="e#44#59#0#PHP" expanded="true" />
-                <element signature="e#175#423#0#PHP" />
-                <element signature="e#430#541#0#PHP" />
-                <element signature="e#548#733#0#PHP" />
-                <element signature="e#740#886#0#PHP" />
-                <element signature="e#892#1066#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+            <state relative-caret-position="194">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#44#60#0#PHP" expanded="true" />
                 <element signature="e#178#309#0#PHP" />
                 <element signature="e#315#465#0#PHP" />
                 <element signature="e#471#556#0#PHP" />
+                <element signature="e#562#1837#0#PHP" />
                 <element signature="e#950#1274#0#PHP" />
                 <element signature="e#1279#1316#0#PHP" />
                 <element signature="e#1322#1370#0#PHP" />
-                <element signature="e#1376#1542#0#PHP" />
-                <element signature="e#1548#1734#0#PHP" />
+                <element signature="e#1701#1867#0#PHP" />
+                <element signature="e#1873#2059#0#PHP" />
                 <element signature="e#1742#2134#0#PHP" />
               </folding>
             </state>
@@ -188,19 +209,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_10_103336_create_cooker_ratings_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="201" selection-start-line="201" selection-end-line="201" />
+            <state relative-caret-position="-126">
+              <caret line="171" column="37" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="37" />
               <folding>
                 <element signature="e#44#64#0#PHP" expanded="true" />
                 <element signature="e#1755#4312#0#PHP" />
@@ -215,16 +227,14 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-27">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="178">
+              <caret line="29" column="16" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="19" />
               <folding>
                 <element signature="e#44#64#0#PHP" expanded="true" />
                 <element signature="e#186#331#0#PHP" />
                 <element signature="e#338#385#0#PHP" />
-                <element signature="e#392#696#0#PHP" />
                 <element signature="e#702#868#0#PHP" />
                 <element signature="e#875#923#0#PHP" />
-                <element signature="e#930#1285#0#PHP" />
                 <element signature="e#1292#1380#0#PHP" />
               </folding>
             </state>
@@ -234,8 +244,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="211">
+              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
               <folding>
                 <element signature="e#44#69#0#PHP" expanded="true" />
                 <element signature="e#301#466#0#PHP" />
@@ -243,49 +253,7 @@
                 <element signature="e#803#1061#0#PHP" />
                 <element signature="e#1194#1365#0#PHP" />
                 <element signature="e#1516#1564#0#PHP" />
-                <element signature="e#1757#2037#0#PHP" />
                 <element signature="e#2182#2276#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#44#64#0#PHP" expanded="true" />
-                <element signature="e#186#332#0#PHP" />
-                <element signature="e#339#386#0#PHP" />
-                <element signature="e#393#533#0#PHP" />
-                <element signature="e#540#706#0#PHP" />
-                <element signature="e#713#761#0#PHP" />
-                <element signature="e#768#931#0#PHP" />
-                <element signature="e#938#1026#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CookerController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-              <folding>
-                <element signature="e#44#72#0#PHP" expanded="true" />
-                <element signature="e#177#394#0#PHP" />
-                <element signature="e#401#448#0#PHP" />
-                <element signature="e#454#516#0#PHP" />
-                <element signature="e#523#571#0#PHP" />
-                <element signature="e#578#626#0#PHP" />
-                <element signature="e#632#700#0#PHP" />
-                <element signature="e#706#757#0#PHP" />
-                <element signature="e#763#1022#0#PHP" />
-                <element signature="e#1028#1884#0#PHP" />
-                <element signature="e#1894#1961#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -375,19 +343,19 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPrice.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_11_114652_create_recipe_table.php" />
-        <option value="$PROJECT_DIR$/app/Recipe.php" />
         <option value="$PROJECT_DIR$/app/RecipeBox.php" />
         <option value="$PROJECT_DIR$/app/RecipeRating.php" />
         <option value="$PROJECT_DIR$/app/CookerRating.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_10_103336_create_cooker_ratings_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/CookerController.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/UserController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Recipe.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php" />
       </list>
     </option>
   </component>
@@ -573,7 +541,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../webproject/rolesandauth" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -626,12 +594,12 @@
       <workItem from="1552555159109" duration="676000" />
       <workItem from="1552806388584" duration="2837000" />
       <workItem from="1552810029243" duration="22945000" />
-      <workItem from="1552893831863" duration="21503000" />
+      <workItem from="1552893831863" duration="25733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175239000" />
+    <option name="totallyTimeSpent" value="179469000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -714,17 +682,25 @@
           <line>22</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php</url>
+          <line>189</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php</url>
+          <line>29</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php</url>
+          <line>82</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_11_122539_create_sliders_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_08_183330_create_preparation_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -936,13 +912,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Recipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/RecipeBox.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -964,13 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Country.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="15" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/CookerRating.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -987,44 +949,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CookerController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="772">
           <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
           <folding>
             <element signature="e#44#72#0#PHP" expanded="true" />
-            <element signature="e#177#394#0#PHP" />
-            <element signature="e#401#448#0#PHP" />
-            <element signature="e#454#516#0#PHP" />
-            <element signature="e#523#571#0#PHP" />
-            <element signature="e#578#626#0#PHP" />
-            <element signature="e#632#700#0#PHP" />
-            <element signature="e#706#757#0#PHP" />
-            <element signature="e#763#1022#0#PHP" />
-            <element signature="e#1028#1884#0#PHP" />
-            <element signature="e#1894#1961#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#44#64#0#PHP" expanded="true" />
-            <element signature="e#186#331#0#PHP" />
-            <element signature="e#338#385#0#PHP" />
-            <element signature="e#392#696#0#PHP" />
-            <element signature="e#702#868#0#PHP" />
-            <element signature="e#875#923#0#PHP" />
-            <element signature="e#930#1285#0#PHP" />
-            <element signature="e#1292#1380#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
+        <state relative-caret-position="-112">
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#44#64#0#PHP" expanded="true" />
@@ -1041,8 +976,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RawMaterialPriceController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="211">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
           <folding>
             <element signature="e#44#69#0#PHP" expanded="true" />
             <element signature="e#301#466#0#PHP" />
@@ -1050,85 +985,111 @@
             <element signature="e#803#1061#0#PHP" />
             <element signature="e#1194#1365#0#PHP" />
             <element signature="e#1516#1564#0#PHP" />
-            <element signature="e#1757#2037#0#PHP" />
             <element signature="e#2182#2276#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_11_122539_create_sliders_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="28" />
-          <folding>
-            <element signature="e#44#59#0#PHP" expanded="true" />
-            <element signature="e#175#423#0#PHP" />
-            <element signature="e#430#541#0#PHP" />
-            <element signature="e#548#733#0#PHP" />
-            <element signature="e#740#886#0#PHP" />
-            <element signature="e#892#1066#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-          <folding>
-            <element signature="e#44#60#0#PHP" expanded="true" />
-            <element signature="e#178#309#0#PHP" />
-            <element signature="e#315#465#0#PHP" />
-            <element signature="e#471#556#0#PHP" />
-            <element signature="e#950#1274#0#PHP" />
-            <element signature="e#1279#1316#0#PHP" />
-            <element signature="e#1322#1370#0#PHP" />
-            <element signature="e#1376#1542#0#PHP" />
-            <element signature="e#1548#1734#0#PHP" />
-            <element signature="e#1742#2134#0#PHP" />
-          </folding>
+        <state relative-caret-position="-44">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+        <state relative-caret-position="126">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="e#42#70#0#PHP" expanded="true" />
-            <element signature="e#387#801#0#PHP" />
             <element signature="e#807#1847#0#PHP" />
-            <element signature="e#1853#1942#0#PHP" />
             <element signature="e#1948#2135#0#PHP" />
             <element signature="e#2141#2830#0#PHP" />
             <element signature="e#2837#3331#0#PHP" />
             <element signature="e#3337#3543#0#PHP" />
             <element signature="e#3550#4010#0#PHP" />
             <element signature="e#4016#4113#0#PHP" />
-            <element signature="e#4124#4201#0#PHP" />
-            <element signature="e#4333#4539#0#PHP" />
-            <element signature="e#4602#4664#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/SliderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+          <folding>
+            <element signature="e#44#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Recipe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/RecipeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        <state relative-caret-position="-126">
+          <caret line="171" column="37" selection-start-line="171" selection-start-column="20" selection-end-line="171" selection-end-column="37" />
           <folding>
             <element signature="e#44#64#0#PHP" expanded="true" />
             <element signature="e#1755#4312#0#PHP" />
             <element signature="e#4318#4507#0#PHP" />
             <element signature="e#4699#5252#0#PHP" />
             <element signature="e#5258#5469#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/IngredientsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="29" column="16" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="19" />
+          <folding>
+            <element signature="e#44#64#0#PHP" expanded="true" />
+            <element signature="e#186#331#0#PHP" />
+            <element signature="e#338#385#0#PHP" />
+            <element signature="e#702#868#0#PHP" />
+            <element signature="e#875#923#0#PHP" />
+            <element signature="e#1292#1380#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Country.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/API/CountryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#44#60#0#PHP" expanded="true" />
+            <element signature="e#178#309#0#PHP" />
+            <element signature="e#315#465#0#PHP" />
+            <element signature="e#471#556#0#PHP" />
+            <element signature="e#562#1837#0#PHP" />
+            <element signature="e#950#1274#0#PHP" />
+            <element signature="e#1279#1316#0#PHP" />
+            <element signature="e#1322#1370#0#PHP" />
+            <element signature="e#1701#1867#0#PHP" />
+            <element signature="e#1873#2059#0#PHP" />
+            <element signature="e#1742#2134#0#PHP" />
           </folding>
         </state>
       </provider>

@@ -45,13 +45,28 @@ class RawMaterialPriceController extends Controller
 
     public function update(Request $request, $id)
     {
-        RawMaterialPrice::where('id',$id)->update
-        ([
-            'raw_material_id'=>$request['raw_material_id'],
-            'country_id'=>$request['country_id'],
-            'price'=>$request['price']
+        $update = [];
 
-        ]);
+        if(isset($request['raw_material_id']))
+        {
+            $update['raw_material_id'] = $request['raw_material_id'];
+        }
+        if(isset($request['country_id']))
+        {
+            $update['country_id'] = $request['country_id'];
+
+        }
+        if(isset($request['price']))
+        {
+            $update['price'] = $request['price'];
+
+        }
+
+
+        RawMaterialPrice::where('id',$id)->update
+        (
+            $update
+        );
     }
 
     public function destroy($id)

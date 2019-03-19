@@ -193,12 +193,6 @@ class RecipeController extends Controller
         return response()->json(['Comment' => $comment]);
     }
 
-    public function RecipeRating($id)
-    {
-        $RecipeRating = RecipeRating::join('users', 'user_id', '=', 'users.id')->where('recipe_id','=',$id)->get();
-        return response()->json(['Rating' => $RecipeRating]);
-    }
-
     public function push_favorites(Request $request, $id)
     {
       DB::table('recipe_box')->insert(
@@ -217,9 +211,5 @@ class RecipeController extends Controller
       ]);
     }
 
-   /* public function remove_favorites(Request $request, $id)
-    {
-      DB::table('recipe_box')->where('recipe_id' => $id, 'user_id' => $request->user()->id)->delete();
-      return response()->json(['Success' => 'Recipe removed from favorites successfully!']);
-    }*/
+
 }
