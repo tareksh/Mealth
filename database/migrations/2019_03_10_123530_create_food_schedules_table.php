@@ -18,7 +18,7 @@ class CreateFoodSchedulesTable extends Migration
             $table->integer("user_id");
             $table->string('title');
             $table->date('start_time');
-
+            $table->string('meals');
             $table->integer("duration");
             $table->integer("calories");
             $table->integer("price");
